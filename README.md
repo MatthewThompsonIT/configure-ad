@@ -19,7 +19,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Setup Domain Controller and Client-1 in Azure
+- [Setup Domain Controller and Client-1 in Azure](https://github.com/MatthewThompsonIT/configure-ad/edit/main/README.md#setup-of-resource-group-virtual-network-domain-controller-and-client-1)
 - Install Active Directory and join Client-1 to it
 - Create a bunch of additional users to simulate a large business
 - Enabling, unlocking accounts, and resetting Passwords
