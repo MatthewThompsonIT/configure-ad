@@ -183,6 +183,93 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Deploying Active Directory</h2>
 
+- Open up the "Server Manager" in dc-1
+- Hit "Add roles and features"
+
+![image](https://github.com/user-attachments/assets/6c4bb56a-a1f7-4f1b-aa61-2b1323ebf744)
+
+- Leave everything default and hit next until you get to "Server Roles"
+  - Check the box next to "Active Directory Domain Services"
+    - Hit "Add Features"
+
+![image](https://github.com/user-attachments/assets/ebac6fb8-98b7-443d-bfe0-89a53a45b1b1)
+
+- Continue hitting next until you get to "Confirmation"
+  - Check the box next to "Restart the desination server automatically if required"
+- Hit "Install"
+- Active Directory is now installed so lets configure it.
+
+- Click the flag in the top right of the Server Manager
+- Click "Promote this server to a domain controller"
+
+![image](https://github.com/user-attachments/assets/23e5304e-7414-4a86-bffc-cf6eec3e0f74)
+
+- In the "Active Directory Domain Services Configuration Wizard"
+  - Change the "deplotment operation" to "Add a new forest"
+  - Name the domain whatever you would like it to be called (I use "mydomain.com" but it can be anything you like")
+
+![image](https://github.com/user-attachments/assets/83f506f5-1810-4cec-880c-ff1d141ad625)
+
+- Hit next
+- Under Domain Controller Options, enter in a password for the "Directory Services Restore Mode" and write it down just incase you need it (you wont need it for this tutorial)
+- Hit next and make sure "Create DNS delegation" is UNCHECKED
+- Comtinue clicking "next" until you get to "installation"
+- Hit Install
+- dc-1 will restart
+- When logging back into dc-1 we will now be adding the domain infront of our username (mydomain.com\labuser)
+  - Note: Make sure you are using "\" and not "/" when trying to log in.
+
+![image](https://github.com/user-attachments/assets/ad715702-da81-49ca-b7f9-6ade7cd745d3)
+
+- Now lets create a Domain Admin user within the domain (Pay attention of this part as you do NOT want to mess it up)
+- In Active Directory Users and Computers (ADUC)
+  - Type "Active Directory Users and Computers" into the search bar
+- Lets create two Organizational Units (MAKE SURE YOU SPELL THESE EXACTLY AS I DO)
+
+![image](https://github.com/user-attachments/assets/7648ae2c-edca-41f0-beda-51151e860a98)
+
+- Create an Organizational Unit (OU) called “_EMPLOYEES”
+
+
+![image](https://github.com/user-attachments/assets/2cb905cb-9ab8-4338-9a9a-56929f56faa9)
+
+
+- Create a new OU named “_ADMINS”
+
+![image](https://github.com/user-attachments/assets/296721ce-906a-4a7d-8bd1-5441328de3da)
+
+- Create a new employee named “Jane Doe” with the username “jane_admin”
+  - Click on the _ADMINS folder and right click in the blank space to the right
+  - Choose new, then User
+
+![image](https://github.com/user-attachments/assets/833efa7d-8101-445c-a7c9-19a4bcc8c1ef)
+
+  - Fill out the First and Last name, and create a username
+  - Hit next then create password
+  - Uncheck all 4 boxes under the password
+  - Hit next and then finish
+
+![image](https://github.com/user-attachments/assets/29a7ffbd-36a6-406d-9d69-559c4a8386f3)
+
+- Add jane_admin to the “Domain Admins” Security Group
+  - Right click the new account you created and hit "Properties"
+
+![image](https://github.com/user-attachments/assets/50065342-cfee-46fc-bf3a-5f6dd35ad750)
+
+  - Choose the "Member Of" tab at the top
+  - Hit "Add..."
+  - Enter in "Domain Admins"
+  - Hit "Check Names"
+  - Press "OK" then "Apply"
+
+![image](https://github.com/user-attachments/assets/5d2775d8-ac7b-496f-9b21-4d2e314a4c04)
+
+
+- Log out / close the connection to DC-1 and log back in as “mydomain.com\jane_admin”
+- Use jane_admin as your admin account from now on
+
+
+
 
 
 
