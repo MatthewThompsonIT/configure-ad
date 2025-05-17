@@ -181,16 +181,16 @@ This tutorial outlines the implementation of on-premises Active Directory within
   
 
 
+<h2>Deploying Active Directory</h2>
 
 
 
 
+<h2>Creating Users with PowerShell</h2>
 
 
 
-
-
-
+<h2>Group Policy and Managing Accounts</h2>
 
 
 
