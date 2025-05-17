@@ -20,9 +20,9 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>High-Level Deployment and Configuration Steps</h2>
 
 - [Setup Domain Controller and Client-1 in Azure](https://github.com/MatthewThompsonIT/configure-ad/tree/main?tab=readme-ov-file#setup-of-resource-group-virtual-network-domain-controller-and-client-1)
-- Install Active Directory and join Client-1 to it
-- Create a bunch of additional users to simulate a large business
-- Enabling, unlocking accounts, and resetting Passwords
+- [Install Active Directory and join Client-1 to it](https://github.com/MatthewThompsonIT/configure-ad?tab=readme-ov-file#deploying-active-directory)
+- [Create a bunch of additional users to simulate a large business](https://github.com/MatthewThompsonIT/configure-ad?tab=readme-ov-file#creating-users-with-powershell)
+- [Enabling, unlocking accounts, and resetting Passwords](https://github.com/MatthewThompsonIT/configure-ad?tab=readme-ov-file#group-policy-and-managing-accounts)
 
 <h2>Setup of Resource Group, Virtual Network, Domain Controller and Client-1</h2>
 
