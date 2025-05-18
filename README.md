@@ -349,22 +349,66 @@ https://github.com/MatthewThompsonIT/configure-ad/blob/8b02bc53fcc3987e5a4963682
 
 ![image](https://github.com/user-attachments/assets/57c9bc40-c48b-4a09-a4c9-26eb3925b03e)
 
-- Log out of client one and sign back in as the account you picked
-
 <h2>Group Policy and Managing Accounts</h2>
 
+- Lets set up Group Policy
+- On dc-1, right click the start menu and hit "run"
+  - Type in gpmc.msc, this will open the group policy management
 
+![image](https://github.com/user-attachments/assets/8ee9cf37-9e57-4e4c-bff8-f8fffaeb374a)
 
+- Open up the dropdowns until you see "mydomain.com" (or whatever you named your domain)
+- Right click on the "Default Domain Policy" and hit "Edit..."
 
+![image](https://github.com/user-attachments/assets/86cba1fd-8aff-4280-8ab9-2e7388e2c915)
 
+- In the Group Policy Management Editor, expand the following
+  - Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Account Lockout Policy
 
+![image](https://github.com/user-attachments/assets/fcd8bea8-0a2d-4935-9726-eb61deb1467e)
 
+- Open the Account Lockout Duration Properties
+  - Check the "Define this policy setting"
+  - Set it to however long you want the account to be locked out for (30 minutes)
+  - Change the "allow administrator account lockout" to enabled
 
+![image](https://github.com/user-attachments/assets/4af406e6-2820-49dd-9272-b4685041dac3)
 
+> [!NOTE]
+> It should prompt you to change the "account Lockout threshold" and "reset account lockout counter after" hit yes
+> If it does not prompt you then set those manually to what ever you like (I leave it as the prompt said)
+> ![image](https://github.com/user-attachments/assets/311cc51f-97d0-47c2-9555-f529eb44fcf5)
 
+- Log into client-1 as your admin account (mydomain.com\jane_admin)
+- Open up the Command Prompt by typing cmd into the search bar
+- type "gpupdate /force" (This will force the changed we just made to take effect on client_1)
 
+![image](https://github.com/user-attachments/assets/f019cc96-d32b-4bee-bbe9-5fbfecb630d5)
 
+- Log out of the admin account and try to log in with any of the random accounts made earlier
+- Type the wrong password in 6 times and you should be locked out of the account
 
+![image](https://github.com/user-attachments/assets/457d6677-87fe-4647-b697-e2deb1d07aeb)
 
+- Go back to dc-1 and in active directory
+- Right click on "mydomain.com" and hit "Find..."
+- Type in the name of the account you got locked out of
+- Click on their name
+- Go to "Account"
+- Check the box next to "Unlock account"
+- Hit Apply and OK
 
+![image](https://github.com/user-attachments/assets/4eadf278-735a-41cc-8f23-24f4bed6a925)
+
+- You will now be able to log into the account with the right password
+
+- To reset a password its the same steps
+- Search the account in the Active Directory
+- Right click on the name of the account and hit "Reset Password"
+
+![image](https://github.com/user-attachments/assets/b9a4f182-585b-441f-9050-e4c4c4d09d12)
+
+- You can now change the password for them and unlock their account
+
+![image](https://github.com/user-attachments/assets/292c8688-7330-45f1-9e85-e0caf6eacf5a)
 
