@@ -412,3 +412,38 @@ https://github.com/MatthewThompsonIT/configure-ad/blob/8b02bc53fcc3987e5a4963682
 
 ![image](https://github.com/user-attachments/assets/292c8688-7330-45f1-9e85-e0caf6eacf5a)
 
+- To Disable/Enable accounts
+- Search the account in the Active Directory
+- Right click on the name of the account and hit "Disable Account" or "Enable Account"
+
+![image](https://github.com/user-attachments/assets/831cdffb-8558-4c99-b3a0-b76535d6bb3a)
+
+- You will no longer be able to log into that account until it is re-enabled
+
+
+- To see all the activity we just did
+- Type "eventvwr.msc" to open event viewer on dc-1
+
+![image](https://github.com/user-attachments/assets/39eaa551-034e-446f-a563-30fb6287c188)
+
+- Expand "Windows Logs" and then right click on "Security"
+- Click on "Find..."
+
+![image](https://github.com/user-attachments/assets/be185b00-c800-4ded-ae61-92ea83bfca41)
+
+- Type in the name of the user account you were just logging in and out of
+- Hit "Find Next"
+- Go through the logs and see all the logs generated around that account
+
+
+> [!NOTE]
+> The same thing can be done with an admin account on client-1
+> On client-1 you will be able to see all of the failed login attempts
+![image](https://github.com/user-attachments/assets/298a99f4-c8ca-464e-9148-8eef559de714)
+
+
+<h2>Clean up</h2>
+
+- Dont forget to turn off the virtual machines / delete them when done with the tutorial to save money
+- Follow [this guide](https://github.com/MatthewThompsonIT/creating-virtual-machines?tab=readme-ov-file#cleanupexiting-the-vm) to learn how to delete / disable VMs in Azure
+
