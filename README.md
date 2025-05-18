@@ -321,13 +321,35 @@ This tutorial outlines the implementation of on-premises Active Directory within
   - Name it create-users
   - Save it on the desktop or just anywhere you can easily find it
 
+- Copy and paste this script into PowerShell
+  - This will generate around 10000 users with random names for us to use
+
+https://github.com/MatthewThompsonIT/configure-ad/blob/8b02bc53fcc3987e5a49636828eb099155f17848/Generate-Names-Create-Users.ps1#L1-L46
+
+> [!NOTE]
+> The path on line 43 MUST be the same name as what you named the employees folder in the Active Directory or the script will not work
+> ![image](https://github.com/user-attachments/assets/f5b3a600-2477-4d8d-ab9e-4bc770d98f5b)
 
 
+- Run the script by clicking on the green arrow at the top
 
+![image](https://github.com/user-attachments/assets/52056d93-99d5-46d3-acfa-2a6028e01c75)
 
+- It will begin creating 10000 random users for us to use
 
+![image](https://github.com/user-attachments/assets/adb32e33-51ef-46ea-951d-c00900884dca)
 
+- Refresh the _EMPLOYEES OU by right clicking the folder and clicking on "Refresh"
 
+![image](https://github.com/user-attachments/assets/b78f2dd1-46a3-4103-827c-1dbc36b8834c)
+
+- You will begin seeing all the random employees being created
+- Pick any random one of them thats easy to remember and write it down
+- The password for all users is "Password1"
+
+![image](https://github.com/user-attachments/assets/57c9bc40-c48b-4a09-a4c9-26eb3925b03e)
+
+- Log out of client one and sign back in as the account you picked
 
 <h2>Group Policy and Managing Accounts</h2>
 
