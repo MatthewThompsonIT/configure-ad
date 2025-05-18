@@ -164,7 +164,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Copy the public IP address of client-1 and remote desktop connect to it
 - Get dc-1's private IP address, it is the same one we pasted in earlier (10.0.0.4)
 - Open up "powershell" in client-1 by typing in powershell into the start menu in the bottom left
-  - (Note: if you get a timeout or it says "destination host unreachable" make sure that dc-1 and client-1 are in the same Virtual Network, that you copied the private IP address of dc-1, and that you properly disabled the firewall in dc-1.)
+
+> [!NOTE]
+> If you get a timeout or it says "destination host unreachable" make sure that dc-1 and client-1 are in the same Virtual Network, that you copied the private IP address of dc-1, and that you properly disabled the firewall in dc-1.)
+
 - If you successfully see the response ping then continue if not, go back and check the steps in the note above.
 
 ![image](https://github.com/user-attachments/assets/6a224bb3-705b-424a-bfa6-80bd93fd55b0)
