@@ -324,7 +324,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Copy and paste this script into PowerShell
   - This will generate around 10000 users with random names for us to use
 
-https://github.com/MatthewThompsonIT/configure-ad/blob/8b02bc53fcc3987e5a49636828eb099155f17848/Generate-Names-Create-Users.ps1#L1-L46
+https://github.com/MatthewThompsonIT/configure-ad/blob/082ff84f5c1b7015088fbbbb69e1e0b65945b2a3/Generate-Names-Create-Users.ps1#L1-L46
 
 > [!NOTE]
 > The path on line 43 MUST be the same name as what you named the employees folder in the Active Directory or the script will not work
