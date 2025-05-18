@@ -217,7 +217,9 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Hit Install
 - dc-1 will restart
 - When logging back into dc-1 we will now be adding the domain infront of our username (mydomain.com\labuser)
-  - Note: Make sure you are using "\" and not "/" when trying to log in.
+> [!NOTE]
+> Make sure you are using "\" and not "/" when trying to log in.
+
 
 ![image](https://github.com/user-attachments/assets/ad715702-da81-49ca-b7f9-6ade7cd745d3)
 
@@ -269,11 +271,61 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Use jane_admin as your admin account from now on
 
 
+- Now lets join client-1 to our domain
+- Open up the system settings (Right click the windows icon in the bottom left and hit system) on client-1 and go to the bottom section "About"
+- Click on "Rename this PC (advanced) on the right
+
+![image](https://github.com/user-attachments/assets/31f99cc4-8c77-4572-9f03-b784a4fd73f3)
+
+- Click on "Change..." under "Computer Name"
+- Change the name to whatever you named your domain earlier (mydomain.com)
+> [!NOTE]
+> If you get an error message instead of a log in panel then you entered in the wrong domain or set up the DNS settings wrong.
 
 
+![image](https://github.com/user-attachments/assets/405bf414-28ed-42dc-90e3-eb0dd2e93b2f)
+
+- Enter in the info you used for your admin account (mydomain.com\jane_admin)
+- You will get a welcome message and be asked to restart client-1
+- Restart client-1 and log back in with the admin account
+-Ensure that client-1 was added to the computers folder inside of the Active Directory
+
+![image](https://github.com/user-attachments/assets/3521a7ba-7439-4f22-868b-84b54b2ded9b)
+
+- Create one more OU called "_CLIENTS" and put client-1 in it
+
+- Open up system once more and this time click on "Remote Desktop"
+
+![image](https://github.com/user-attachments/assets/0898b654-9bf6-4645-94d2-eb7073bb2893)
+
+- Click on "Select users that can remotely access this PC" under "User Accounts"
+
+![image](https://github.com/user-attachments/assets/3c0a0cc8-7e79-412e-b1bc-caadca74a198)
+
+- Click on "Add..."
+- Type "Domain Users" and hit "Check Names"
+- Hit "OK"
+
+![image](https://github.com/user-attachments/assets/478042a6-9c5b-4c9e-ab98-0b838a8a75a4)
 
 
 <h2>Creating Users with PowerShell</h2>
+
+- Open PowerShell ISE as an administrator (Type it in the search bar, right click it, and hit "run as administrator")
+- Hit Yes on the prompt
+- At the top of the PowerShell hit the file icon to create a new file
+
+![image](https://github.com/user-attachments/assets/fd152bf7-5631-4426-8a7b-6a0ac632e2f6)
+
+- Hit Control + S on your keyboard to save it (File --> Save As)
+  - Name it create-users
+  - Save it on the desktop or just anywhere you can easily find it
+
+
+
+
+
+
 
 
 
